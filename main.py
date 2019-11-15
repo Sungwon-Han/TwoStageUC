@@ -20,7 +20,7 @@ warnings.filterwarnings("ignore")
 
 def config():
     global args
-    parser = argparse.ArgumentParser(description='config for super-AND')
+    parser = argparse.ArgumentParser(description='config for EmbedUL')
 
     parser.add_argument('--dataset', default='cifar10', type=str, help='available dataset: cifar10, cifar100, cifar20 (dafault: cifar10)')
     parser.add_argument('--low_dim', default=128, type=int, help='feature dimension')
