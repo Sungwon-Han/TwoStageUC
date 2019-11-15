@@ -14,7 +14,7 @@ The encoder projects input images to a lower dimension embedding sphere via deep
 ### (b) Second stage : Unsupervised clustering with deep embedding ### 
 Multi-head normalized fully-connected layer classifies images byjointly optimizing the clustering and embedding losses.
 
-<img src="./fig/stage2.png"> 
+<img src="./fig/stage2.PNG"> 
 
 ## Result & Experiment ##
 
