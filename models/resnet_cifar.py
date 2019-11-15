@@ -23,7 +23,7 @@ class Multi_head_fc(nn.Module):
     def __init__(self, nclasses=10, num_sub_heads = 5):
         super(Multi_head_fc, self).__init__()
         self.num_sub_heads = num_sub_heads
-        self.heads = nn.ModuleList([_Head_fc(128, 10) for _ in range(self.num_sub_heads)])
+        self.heads = nn.ModuleList([_Head_fc(128, nclasses) for _ in range(self.num_sub_heads)])
       
     def forward(self, x):
         results = []
