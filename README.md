@@ -49,7 +49,7 @@ python3 super_and.py --dataset cifar10
 3. Stage 2 Implementation on CIFAR 10
 
 ```
-python3 main.py --resume [stage1 pretrained model]
+python3 main.py --dataset cifar10 --resume [stage1 pretrained model]
 ```
 
 
