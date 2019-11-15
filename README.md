@@ -37,7 +37,7 @@ Currently, we support the pretrained model for our model and super-AND on CIFAR1
 1. Clone the repository
 
 ```
-https://github.com/EmbedUL/EmbedUL.git
+git clone https://github.com/EmbedUL/EmbedUL.git
 ```
 
 2. Stage 1 Implementation on CIFAR 10
