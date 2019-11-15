@@ -212,7 +212,6 @@ def main():
             print("accuracy: %.2f\n" % (acc*100))  
 
             if acc > best_acc:
-                print("state saving...")
                 best_acc = acc
             print("best accuracy: %.2f\n" % (best_acc*100))
             
