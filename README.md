@@ -1,4 +1,4 @@
-# EmbedUL #
+# Embedding matters: A novel two-stage unsupervised image classification #
 This repository is the pytorch code for "Embedding matters: A novel two-stage unsupervised image classification"
 ## Highlight ##
 * Our model is two-stage classification method, where a pre-trained embedding module precedes a refining module that concurrently tunes the embedding and performs unsupervised image classification.
