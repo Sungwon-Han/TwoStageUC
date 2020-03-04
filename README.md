@@ -1,27 +1,26 @@
-# Embedding matters: A novel two-stage unsupervised image classification #
-This repository is the pytorch code for "Embedding matters: A novel two-stage unsupervised image classification"
+# Pre-training matters: Novel two-stageunsupervised image classification #
+This repository is the pytorch code for "Pre-training matters: Novel two-stageunsupervised image classification"
 ## Highlight ##
-* Our model is two-stage classification method, where a pre-trained embedding module precedes a refining module that concurrently tunes the embedding and performs unsupervised image classification.
-* Our model outperforms SOTA in multiple datasets, with  substantially  high  accuracy  of  71.8%  for  CIFAR-10(i.e.,  10.1pp increase) and 34.0% for CIFAR-100-20 (i.e.,8.3pp increase) in unsupervised tasks.
+* Our two-stage process starts with embedding learning as a pretraining step,which produces a great initialization. The second stage aims to assign classfor each data point by refining its pretrained embedding. Our model success-fully optimize two objectives without fall into misaligned state.
+* The proposed method outperforms the existing baselines substantially. Withthe CIFAR-10 dataset, we achieve an accuracy of 81.0%, whereas the bestperforming alternative reaches 61.7%.
+* Extensive  experiments  and  ablation  studies  confirm  that  both  stages  arecritical to the overall performance gain. In-depth comparison with the cur-rent state-of-the-art (SOTA) methods reveals that a massive advantage ofour approach comes from the embedding learning initialization that gatherssimilar images nearby even in a low-dimensional space.
+* The suggested model can be used as a pretraining step for a semi-supervisedtask with few labels. We show the potential gain in the experiment section
 ## Two stage model architecture ##
-<center><img src="./fig/model_arch.PNG"> </center>
+<center><img src="./fig/model_arch.png"> </center>
 
 ### (a) First stage : Unsupervised deep embedding ### 
-The encoder projects input images to a lower dimension embedding sphere via deep embedding (Super-AND). The encoder is trained to gather samples with similar semantic contents nearby and separate them if otherwise.
-* Super-AND 
-<center><img src="./fig/super_and.png"></center>
-
-### (b) Second stage : Unsupervised clustering with deep embedding ### 
+The encoder projects input images to a lower dimension embedding sphere via deep embedding ([Super-AND](https://github.com/super-AND/super-AND)). The encoder is trained to gather samples with similar semantic contents nearby and separate them if otherwise.
+### (b) Second stage: Unsupervised class assignment with refining pretrained embeddings ### 
 Multi-head normalized fully-connected layer classifies images byjointly optimizing the clustering and embedding losses.
 
-<img src="./fig/stage2.PNG"> 
+<img src="./fig/stage2.png"> 
 
 ## Result & Experiment ##
 
 ### Unsupervised Image Classification Result ###
 * We achieve new state of the art unsupervised image classification record on multiple dataset (CIFAR 10, CIFAR 100-20, STL 10)
 
-<img src="./fig/model_result.PNG" width="500" height="400"> 
+<img src="./fig/model_result.png" width="500" height="400"> 
 
 ### Confusion Matrix ###
 * We examine the confusion matrix between ground truthlabels and classification results. Our model finds the right cluster for most images, although cluster assignment in some classessuch as birds, cats, and dogs is error-prone. Nonetheless, IIC model (previous SOTA) performs far less accurately.
