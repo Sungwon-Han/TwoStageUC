@@ -1,10 +1,11 @@
 # Pre-training matters: Novel two-stage unsupervised image classification #
 This repository is the pytorch code for "Pre-training matters: Novel two-stage unsupervised image classification"
 ## Highlight ##
-* Our two-stage process starts with embedding learning as a pretraining step,which produces a great initialization. The second stage aims to assign classfor each data point by refining its pretrained embedding. Our model success-fully optimize two objectives without fall into misaligned state.
+* Our two-stage process starts with embedding learning as a pretraining step,which produces a great initialization. The second stage aims to assign classfor each data point by refining its pretrained embedding. Our model successfully optimize two objectives without fall into misaligned state.
 * The proposed method outperforms the existing baselines substantially. Withthe CIFAR-10 dataset, we achieve an accuracy of 81.0%, whereas the bestperforming alternative reaches 61.7%.
-* Extensive  experiments  and  ablation  studies  confirm  that  both  stages  arecritical to the overall performance gain. In-depth comparison with the cur-rent state-of-the-art (SOTA) methods reveals that a massive advantage ofour approach comes from the embedding learning initialization that gatherssimilar images nearby even in a low-dimensional space.
-* The suggested model can be used as a pretraining step for a semi-supervisedtask with few labels. We show the potential gain in the experiment section
+* Extensive experiments and ablation studies confirm that both stages arecritical to the overall performance gain. In-depth comparison with the current state-of-the-art (SOTA) methods reveals that a massive advantage of our approach comes from the embedding learning initialization that gathers similar images nearby even in a low-dimensional space.
+* The suggested model can be used as a pretraining step for a semi-supervised task with few labels. We show the potential gain in the experiment section.
+
 ## Two stage model architecture ##
 <center><img src="./fig/model_arch.png"> </center>
 
