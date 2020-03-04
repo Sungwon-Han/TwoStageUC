@@ -1,5 +1,5 @@
-# Pre-training matters: Novel two-stageunsupervised image classification #
-This repository is the pytorch code for "Pre-training matters: Novel two-stageunsupervised image classification"
+# Pre-training matters: Novel two-stage unsupervised image classification #
+This repository is the pytorch code for "Pre-training matters: Novel two-stage unsupervised image classification"
 ## Highlight ##
 * Our two-stage process starts with embedding learning as a pretraining step,which produces a great initialization. The second stage aims to assign classfor each data point by refining its pretrained embedding. Our model success-fully optimize two objectives without fall into misaligned state.
 * The proposed method outperforms the existing baselines substantially. Withthe CIFAR-10 dataset, we achieve an accuracy of 81.0%, whereas the bestperforming alternative reaches 61.7%.
