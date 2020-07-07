@@ -55,7 +55,7 @@ usage: main.py [-h] [--dataset DATASET] [--low_dim LOW_DIM] [--lr LR]
 ##### Example #####
 
 ```
-python3 main.py --dataset cifar10 --resume [stage1 pretrained model]
+python3 main.py --dataset cifar10 --resume [first stage pretrained model]
 ```
 
 <img src="./fig/stage2.png"> 
