@@ -1,4 +1,4 @@
-# Pretraining matters: A two-stage design for unsupervised image classification #
+# Mitigating Embedding and Class Assignment Mismatch in Unsupervised Image Classification #
 This repository is the pytorch code for "Pretraining matters: A two-stage design for unsupervised image classification"
 ## Highlight ##
 * Our two-stage process starts with embedding learning as a pretraining step, which produces a great initialization. The second stage then aims to assign a class for each data point by refining its pretrained embedding. Our model successfully optimizes two objectives without falling into the misaligned state.
