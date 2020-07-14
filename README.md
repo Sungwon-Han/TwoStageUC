@@ -1,7 +1,7 @@
 # Mitigating Embedding and Class Assignment Mismatch in Unsupervised Image Classification #
 This repository is the pytorch code for "Mitigating Embedding and Class Assignment Mismatch in Unsupervised Image Classification"
 ## Highlight ##
-* Our two-stage process starts with embedding learning as a pretraining step, which produces a great initialization. The second stage then aims to assign a class for each data point by refining its pretrained embedding. Our model successfully optimizes two objectives without falling into the misaligned state.
+* Our two-stage process starts with embedding learning as a pretraining step, which produces a great initialization. The second stage then aims to assign a class for each data point by refining its pretrained embedding. Our model successfully optimizes two objectives without falling into the mismatched state.
 * The proposed method outperforms the existing baselines substantially. With the CIFAR-10 dataset, we achieve an accuracy of 81.0%, whereas the best performing alternative reaches 61.7%.
 * Extensive experiments and ablation studies confirm that both stages are critical to the overall performance gain. In-depth comparison with the current state-of-the-art (SOTA) methods reveals that a massive advantage of our approach comes from the embedding learning initialization that gathers similar images nearby even in a low-dimensional space.
 * Our model can be adopted as a pretraining step for a semi-supervised task with few labels. We show the potential gain in the experiment section.
