@@ -62,8 +62,8 @@ python3 main.py --dataset cifar10 --resume [first stage pretrained model]
 
 ## Pretrained Model ##
 Currently, we support the pretrained model for our model and super-AND on CIFAR10 dataset.
-* [Our model](https://drive.google.com/file/d/1H3ppCkPQNHFEYQS4PLuV26Cp3HpbG4Nb/view?usp=sharing)
 * [Super-AND](https://drive.google.com/file/d/1cABTquqOl5N2Wbchxs0-DBI6OVfnqY5J/view?usp=sharing)
+* [Our model](https://drive.google.com/file/d/1H3ppCkPQNHFEYQS4PLuV26Cp3HpbG4Nb/view?usp=sharing)
 
 ## Result ##
 
