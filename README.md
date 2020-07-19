@@ -76,4 +76,6 @@ Currently, we support the pretrained model for our model and super-AND on CIFAR1
 <img src="./fig/result_avg.png" width="700" height="150"> 
 
 
+## Supplementary Materials ##
+This repository contains supplementary materials in ECCV2020 directory. You can check implementation details and additional analyses of our model.
 
