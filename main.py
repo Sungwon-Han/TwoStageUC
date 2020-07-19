@@ -125,8 +125,8 @@ def train(epoch, net, trainloader, optimizer, device, fc, criterion):
         # Mutual Information Loss
         loss_mi = 0
         for i in range(len(output_list)):
-            output1 = output_list[i][:128, :]
-            output2 = output_list[i][128:, :]
+            output1 = output_list[i][:args.batch_size, :]
+            output2 = output_list[i][args.batch_size:, :]
             iid = IID_loss(output1, output2)
             loss_mi += iid
             loss_list[i] += iid.item()
