@@ -159,7 +159,7 @@ def main():
     args.device = 'cuda' if torch.cuda.is_available() else 'cpu'
     trainset, trainloader, testset, testloader, class_num = preprocess(args)
     net = models.__dict__['ResNet18withSobel'](low_dim=args.low_dim)
-    fc = models.Multi_head_fc(class_num)
+    fc = models.Multi_head_fc(class_num, args.low_dim)
     optimizer = torch.optim.SGD(net.parameters(), args.lr, momentum=args.momentum, weight_decay=args.weight_decay, nesterov=True)
     criterion = Criterion(args.batch_m, args.batch_t, args.batch_size, args.device)
     
