@@ -70,7 +70,10 @@ Currently, we support the pretrained model for our model and super-AND on CIFAR1
 ### Unsupervised Image Classification Result ###
 * We achieve new state of the art unsupervised image classification record on multiple dataset (CIFAR 10, CIFAR 100-20, STL 10)
 <img src="./fig/model_result.png" width="500" height="400"> 
-<img src="./fig/result_avg.png" width="500" height="150"> 
+
+### + Additional experiments ###
+* We found that the performance of our algorithm is sensitive to the initial randomness and pretraining results. When we train our model from scratch including pretraining, result accuracies can be varied accordingly. The table below shows the best and average accuracy of the proposed model, which is evaluated six times.
+<img src="./fig/result_avg.png" width="700" height="150"> 
 
 
 
