@@ -109,7 +109,8 @@ def train(epoch, net, trainloader, optimizer, device, fc, criterion):
     # adjust learning rate
     adjust_learning_rate(optimizer, epoch)  
     optimizer.zero_grad()
-
+    
+    loss_list = [0, 0, 0, 0, 0]
     for batch_idx, (inputs1, inputs2, _, indexes) in enumerate(trainloader):
         inputs1, inputs2, indexes = inputs1.to(device), inputs2.to(device), indexes.to(device)
         inputs = torch.cat((inputs1,inputs2), 0)
@@ -124,9 +125,11 @@ def train(epoch, net, trainloader, optimizer, device, fc, criterion):
         # Mutual Information Loss
         loss_mi = 0
         for i in range(len(output_list)):
-            output1 = output_list[i][:args.batch_size, :]
-            output2 = output_list[i][args.batch_size:, :]
-            loss_mi += IID_loss(output1, output2)
+            output1 = output_list[i][:128, :]
+            output2 = output_list[i][128:, :]
+            iid = IID_loss(output1, output2)
+            loss_mi += iid
+            loss_list[i] += iid.item()
             
         loss_mi /= len(output_list)
         total_loss = loss_ce + loss_mi
@@ -143,7 +146,7 @@ def train(epoch, net, trainloader, optimizer, device, fc, criterion):
                   'CE loss: {ce_loss.val:.4f} ({ce_loss.avg:.4f}) '.format(
                       epoch=epoch, elps_iters=batch_idx,tot_iters=len(trainloader), 
                       train_loss=train_loss, mi_loss=mi_loss, ce_loss=ce_loss))
-
+    print(loss_list)
     return train_loss.avg
             
 def main():
