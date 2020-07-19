@@ -177,7 +177,9 @@ def main():
         assert os.path.isdir(args.model_dir), 'Error: no checkpoint directory found!'
         checkpoint = torch.load(model_path)
         net.load_state_dict(checkpoint['net'])
-
+        if args.test_only:
+            fc.load_state_dict(checkpoint['fc'])
+            
     if args.test_only:
         acc = test(net, testloader, args.device, fc, class_num)
         print("accuracy: {}".format(acc))  
