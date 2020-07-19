@@ -160,6 +160,8 @@ def main():
     trainset, trainloader, testset, testloader, class_num = preprocess(args)
     net = models.__dict__['ResNet18withSobel'](low_dim=args.low_dim)
     fc = models.Multi_head_fc(class_num, args.low_dim)
+    
+    # Multi head fullyconnected layer's weight should be fixed, and not trainable
     optimizer = torch.optim.SGD(net.parameters(), args.lr, momentum=args.momentum, weight_decay=args.weight_decay, nesterov=True)
     criterion = Criterion(args.batch_m, args.batch_t, args.batch_size, args.device)
     
